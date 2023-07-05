@@ -4,12 +4,12 @@
 
 	"default": {
 
-		"host": "leatherstrend.com",
-		"username": "leatherstrend",  // or null for anonymous login
-		"password": "RZTiM~}!p;~o",
+		"host": "yourwebsite.com",
+		"username": "yourUser",  // or null for anonymous login
+		"password": "yourPassword",
 		
 		//"path": "/public_html/beta/",
-		 "path": "/demo.leatherstrend.com/",
+		 "path": "/yourwebsite.com/",
 
 		"upload_on_save": true, // set *false* if you do not want to upload on save!
 
