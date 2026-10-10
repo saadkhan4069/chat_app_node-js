@@ -1,12 +1,13 @@
 <?php
 
-$hostname = '143.198.122.68:3306';
-$username = 'kukgaahqnz';
-$database = 'kukgaahqnz';
-$password = 'rVh524GMHM';
+$hostname = getenv('MYSQL_HOST') ?: 'localhost';
+$port = getenv('MYSQL_PORT') ?: '3306';
+$username = getenv('MYSQL_USER') ?: '';
+$database = getenv('MYSQL_DATABASE') ?: '';
+$password = getenv('MYSQL_PASSWORD') ?: '';
 
 try {
-    $pdo = new PDO("mysql:host=143.198.122.68:3306;dbname=$database", $username, $password);
+    $pdo = new PDO("mysql:host=$hostname:$port;dbname=$database", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo 'Connected successfully!';
 

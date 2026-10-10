@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const http = require("http");
 const express  = require("express");
 const mysql  = require("mysql");
@@ -7,17 +9,17 @@ const app = express();
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
-   const server = http.createServer(app);
+      const server = http.createServer(app);
    const port = process.env.PORT || 3000;
    app.use(express.static(__dirname+'/public'))
      
  
     const connection = mysql.createConnection({
-     host: 'yourHost',
-     port: '3306',
-     user: 'Username',
-     password: 'passoword',
-     database: 'databasename'
+     host: process.env.MYSQL_HOST,
+     port: process.env.MYSQL_PORT || '3306',
+     user: process.env.MYSQL_USER,
+     password: process.env.MYSQL_PASSWORD,
+     database: process.env.MYSQL_DATABASE
    });
 
 
